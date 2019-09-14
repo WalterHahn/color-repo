@@ -14,7 +14,7 @@ The primary objective of this application is to provide a back-end service for [
 
 
 ```
-$ pip install flask,mysql
+$ pip install flask,flask-cors,mysql
 $ export FLASK_APP=index.py
 $ python -m flask run
 ```

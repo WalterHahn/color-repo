@@ -1,7 +1,10 @@
 from models import colors
 
 from flask import Flask, request as req, jsonify, g
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/', methods=['GET', 'PUT', 'DELETE'])
