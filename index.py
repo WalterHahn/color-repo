@@ -95,3 +95,8 @@ def search():
     except Exception as err:
         print(err)
         return {}, 500
+
+
+@app.route('/ping', methods=['GET'])
+def ping():
+    return {}, 200
