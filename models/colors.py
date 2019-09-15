@@ -28,6 +28,18 @@ def add(name, hex):
         return None
 
 
+def update(color_id, name, hex):
+    try:
+        cursor = db.cursor()
+        params = (name, hex, color_id)
+        cursor.execute("UPDATE colors SET name=%s, hex=%s WHERE color_id=%s", params)
+        cursor.close()
+        db.commit()
+        return 1
+    except MySQLdb.Error as err:
+        print(err)
+        return None
+
 
 def delete(color_id):
     try:
@@ -38,7 +50,6 @@ def delete(color_id):
     except MySQLdb.Error as err:
         print(err)
         return None
-
 
 
 def search(query):
